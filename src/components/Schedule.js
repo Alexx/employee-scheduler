@@ -1,7 +1,8 @@
 import React from "react";
-import { Card, ListGroup } from "react-bootstrap";
+import { Row, Col, Card, ListGroup } from "react-bootstrap";
 import { v4 } from "uuid";
 import Moment from "moment";
+import ScheduleDay from "./ScheduleDay";
 
 const initialState = {
   employees: {
@@ -71,16 +72,15 @@ for (let id in initialState.employees.tueEmployees) {
 function Schedule() {
   return (
     <div>
-      <Card style={{ width: "14%" }}>
-        <ListGroup variant="flush">
-          <ListGroup.Item>Openers</ListGroup.Item>
-          {monEmployeeList}
-        </ListGroup>
-      </Card>
-      <Card style={{ width: "14%" }}>
-        <ListGroup.Item>Openers</ListGroup.Item>
-        <ListGroup variant="flush">{tueEmployeeList}</ListGroup>
-      </Card>
+      <Row>
+        <ScheduleDay day="Monday" employeeList={monEmployeeList} />
+        <ScheduleDay day="Tuesday" employeeList={tueEmployeeList} />
+        <ScheduleDay day="Wednesday" employeeList={tueEmployeeList} />
+        <ScheduleDay day="Thursday" employeeList={tueEmployeeList} />
+        <ScheduleDay day="Friday" employeeList={tueEmployeeList} />
+        <ScheduleDay day="Saturday" employeeList={tueEmployeeList} />
+        <ScheduleDay day="Sunday" employeeList={tueEmployeeList} />
+      </Row>
     </div>
   );
 }
