@@ -42,7 +42,6 @@ const employeeList = {
 };
 
 const employeesReducer = (state = employeeList, action) => {
-  let newState;
   switch (action.type) {
     case "ADD_EMPLOYEE":
       employeeList.push(action.payload);
