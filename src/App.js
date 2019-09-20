@@ -9,7 +9,6 @@ function App() {
     <div className="App">
       <Navibar />
       <Container>
-        <h1>Works</h1>
         <AddEmployeeForm />
       </Container>
     </div>

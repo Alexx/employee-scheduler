@@ -1,9 +1,6 @@
 import React from "react";
 import { Form, Button, Card, Row, Col } from "react-bootstrap";
-
-let cardStyle = {
-  padding: "1rem"
-};
+import HourseAvailability from "./HoursAvailability";
 
 function AddEmployeeForm() {
   return (
@@ -27,57 +24,63 @@ function AddEmployeeForm() {
               </Form.Group>
             </Col>
           </Row>
-          <Form.Group controlId="formBasicPassword">
-            <Form.Label>Password</Form.Label>
-            <Form.Control type="password" placeholder="Password" />
+          <Form.Group controlId="employeeAvailability">
+            <Form.Label>Days Available</Form.Label>
+            {["checkbox"].map(type => (
+              <div key={`inline-${type}`} className="mb-3">
+                <Form.Check
+                  inline
+                  label="Monday"
+                  type={type}
+                  id={"mondayAvailability"}
+                />
+                <Form.Check
+                  inline
+                  label="Tuesday"
+                  type={type}
+                  id={"tuesdayAvailability"}
+                />
+                <Form.Check
+                  inline
+                  label="Wednesday"
+                  type={type}
+                  id={"wednesdayAvailability"}
+                />
+                <Form.Check
+                  inline
+                  label="Thursday"
+                  type={type}
+                  id={"thursdayAvailability"}
+                />
+                <Form.Check
+                  inline
+                  label="Friday"
+                  type={type}
+                  id={"fridayAvailability"}
+                />
+                <Form.Check
+                  inline
+                  label="Saturday"
+                  type={type}
+                  id={"saturdayAvailability"}
+                />
+                <Form.Check
+                  inline
+                  label="Sunday"
+                  type={type}
+                  id={"sundayAvailability"}
+                />
+              </div>
+            ))}
           </Form.Group>
-          <Form.Label>Availability</Form.Label>
-          {["checkbox"].map(type => (
-            <div key={`inline-${type}`} className="mb-3">
-              <Form.Check
-                inline
-                label="Monday"
-                type={type}
-                id={"mondayAvailability"}
-              />
-              <Form.Check
-                inline
-                label="Tuesday"
-                type={type}
-                id={"tuesdayAvailability"}
-              />
-              <Form.Check
-                inline
-                label="Wednesday"
-                type={type}
-                id={"wednesdayAvailability"}
-              />
-              <Form.Check
-                inline
-                label="Thursday"
-                type={type}
-                id={"thursdayAvailability"}
-              />
-              <Form.Check
-                inline
-                label="Friday"
-                type={type}
-                id={"fridayAvailability"}
-              />
-              <Form.Check
-                inline
-                label="Saturday"
-                type={type}
-                id={"saturdayAvailability"}
-              />
-              <Form.Check
-                inline
-                label="Sunday"
-                type={type}
-                id={"sundayAvailability"}
-              />
-            </div>
-          ))}
+          <hr />
+          <HourseAvailability day="Monday" />
+          <HourseAvailability day="Tuesday" />
+          <HourseAvailability day="Wednesday" />
+          <HourseAvailability day="Thursday" />
+          <HourseAvailability day="Friday" />
+          <HourseAvailability day="Saturday" />
+          <HourseAvailability day="Sunday" />
           <Button variant="primary" type="submit">
             Submit
           </Button>
