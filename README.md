@@ -26,6 +26,10 @@ What additional tools, frameworks, libraries, APIs, or other resources will thes
 
 Firebase
 
+## Capstone Notes
+
+8:00am-9:00am: Outlined components that I would need to make.
+
 ## Setup/Installation
 
 Step 1: Clone this repository to your desktop

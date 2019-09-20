@@ -1,8 +1,9 @@
 import React from "react";
 import Employee from "./Employee";
 import { addEmployee } from "../actions";
+import { Button } from "react-bootstrap";
 import { connect } from "react-redux";
-import { v4 } from "uuid";
+import { Link } from "react-router-dom";
 
 function EmployeeRoster(props) {
   let employeeList = [];
@@ -11,7 +12,14 @@ function EmployeeRoster(props) {
 
     employeeList.push(<Employee key={id} employee={props.employees[id]} />);
   }
-  return <div>{employeeList}</div>;
+  return (
+    <div>
+      {employeeList}
+      <Link to="/new_employee">
+        <Button>Add Employee</Button>
+      </Link>
+    </div>
+  );
 }
 
 const mapStateToProps = state => {

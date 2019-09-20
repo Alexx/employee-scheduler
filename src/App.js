@@ -6,13 +6,18 @@ import AddEmployeeForm from "./components/AddEmployeeForm";
 import SignInSignUp from "./components/SignInSignUp";
 import Schedule from "./components/Schedule";
 import EmployeeRoster from "./components/EmployeeRoster";
+import { Switch, Route } from "react-router-dom";
 
 function App() {
   return (
     <div className="App">
       <Navibar />
       <Container>
-        <EmployeeRoster />
+        <Switch>
+          <Route exact path="/" component={EmployeeRoster} />
+          <Route exact path="/schedule" component={Schedule} />
+          <Route exact path="/new_employee" component={AddEmployeeForm} />
+        </Switch>
       </Container>
     </div>
   );
