@@ -43,6 +43,12 @@ const convert = time => {
 
 let monEmployeeList = [];
 let tueEmployeeList = [];
+let wedEmployeeList = [];
+let thuEmployeeList = [];
+let friEmployeeList = [];
+let satEmployeeList = [];
+let sunEmployeeList = [];
+
 for (let id in initialState.employees.monEmployees) {
   monEmployeeList.push(
     <ListGroup.Item>
@@ -73,13 +79,25 @@ function Schedule() {
   return (
     <div>
       <Row>
-        <ScheduleDay day="Monday" employeeList={monEmployeeList} />
-        <ScheduleDay day="Tuesday" employeeList={tueEmployeeList} />
-        <ScheduleDay day="Wednesday" employeeList={tueEmployeeList} />
-        <ScheduleDay day="Thursday" employeeList={tueEmployeeList} />
-        <ScheduleDay day="Friday" employeeList={tueEmployeeList} />
-        <ScheduleDay day="Saturday" employeeList={tueEmployeeList} />
-        <ScheduleDay day="Sunday" employeeList={tueEmployeeList} />
+        <ScheduleDay day="Monday" date="9/16" employeeList={monEmployeeList} />
+        <ScheduleDay day="Tuesday" date="9/17" employeeList={tueEmployeeList} />
+        <ScheduleDay
+          day="Wednesday"
+          date="9/18"
+          employeeList={tueEmployeeList}
+        />
+        <ScheduleDay
+          day="Thursday"
+          date="9/19"
+          employeeList={tueEmployeeList}
+        />
+        <ScheduleDay day="Friday" date="9/20" employeeList={tueEmployeeList} />
+        <ScheduleDay
+          day="Saturday"
+          date="9/21"
+          employeeList={tueEmployeeList}
+        />
+        <ScheduleDay day="Sunday" date="9/22" employeeList={tueEmployeeList} />
       </Row>
     </div>
   );

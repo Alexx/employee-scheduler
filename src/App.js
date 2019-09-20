@@ -5,13 +5,15 @@ import Navibar from "./components/Navibar";
 import AddEmployeeForm from "./components/AddEmployeeForm";
 import SignInSignUp from "./components/SignInSignUp";
 import Schedule from "./components/Schedule";
+import EmployeeRoster from "./components/EmployeeRoster";
 
 function App() {
   return (
     <div className="App">
       <Navibar />
-
-      <Schedule />
+      <Container>
+        <EmployeeRoster />
+      </Container>
     </div>
   );
 }

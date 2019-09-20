@@ -5,7 +5,7 @@ function ScheduleDay(props) {
   return (
     <Col>
       <Card>
-        <Card.Header>{props.day}</Card.Header>
+        <Card.Header>{`${props.day} - ${props.date}`}</Card.Header>
         <ListGroup variant="flush">{props.employeeList}</ListGroup>
       </Card>
     </Col>
